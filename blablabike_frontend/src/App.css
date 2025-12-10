@@ -1,0 +1,211 @@
+/* ----------------------------------- */
+/* 1. Global Background (Deep Blue Gradient) */
+/* ----------------------------------- */
+.glass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+
+  /* Deep, modern dark blue gradient */
+  background: linear-gradient(135deg, #091224 0%, #151f33 100%);
+  font-family: "Inter", sans-serif; /* Using a clean, modern font */
+  color: #f0f8ff; /* Default light text color */
+}
+
+/* ----------------------------------- */
+/* 2. The Dark Mode App Card Structure */
+/* ----------------------------------- */
+.glass-card {
+  width: 95%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 30px; /* Highly rounded corners */
+  text-align: center;
+
+  /* Card is mostly solid dark blue, matching the app screen */
+  background-color: #1a2a47;
+
+  /* Minimal border and subtle drop shadow for lift */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+  /* Internal layout */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ----------------------------------- */
+/* 3. Header and Welcome Text */
+/* ----------------------------------- */
+.glass-card h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.welcome-message {
+  color: #9cb1d4; /* Subtle light blue text */
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Logo/Icon placeholder style */
+.app-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  /* This assumes you'll replace this with your bike logo */
+  background-color: #007aff;
+  border-radius: 15px;
+}
+
+/* ----------------------------------- */
+/* 4. Form Layout and Inputs */
+/* ----------------------------------- */
+.glass-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  position: relative;
+  /* Dark background for the input fields */
+  background-color: #1a2a47;
+  border-radius: 12px;
+}
+
+.glass-card input {
+  width: 100%;
+  padding: 18px 50px 18px 15px; /* Added left padding for icon if needed */
+  border: 1px solid #364966; /* Light blue border for visibility */
+  border-radius: 12px;
+
+  background-color: #1a2a47;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.glass-card input::placeholder {
+  color: #9cb1d4;
+}
+
+.glass-card input:focus {
+  outline: none;
+  border-color: #007aff; /* Primary blue focus ring */
+}
+
+/* ----------------------------------- */
+/* 5. Buttons and Links */
+/* ----------------------------------- */
+
+.primary-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+
+  /* High contrast primary button color */
+  background-color: #007aff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.primary-button:hover {
+  background-color: #005fcc;
+}
+
+/* Utility link style (e.g., Forgot Password, Sign up link) */
+.utility-link {
+  color: #007aff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.utility-link:hover {
+  text-decoration: underline;
+}
+
+/* OR Separator Style */
+.separator {
+  color: #5d7494;
+  font-size: 0.9rem;
+  margin: 10px 0;
+  position: relative;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #364966;
+}
+.separator::before {
+  left: 0;
+}
+.separator::after {
+  right: 0;
+}
+
+/* Bottom navigation link */
+.bottom-nav-text {
+  font-size: 0.9rem;
+  color: #9cb1d4;
+  margin-top: 20px;
+}
+.bottom-nav-text a {
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.bottom-nav-text a:hover {
+  text-decoration: underline;
+}
+/* Styling for the Nominatim Suggestions Dropdown */
+.suggestions-list {
+  position: absolute;
+  top: 100%; /* Position right below the input field */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* Style to match your dark theme */
+  background-color: #1a2a47; /* Same as card background */
+  border: 1px solid #364966;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestions-list li {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+  color: #f0f8ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.suggestions-list li:hover {
+  background-color: #007aff; /* Primary color on hover */
+  color: white;
+}
