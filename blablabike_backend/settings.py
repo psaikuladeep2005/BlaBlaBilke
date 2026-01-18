@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ml30k&&n6n-i28_t-xy=j1z91-p1so-@hbnsz(z_ew(f9c69!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -70,7 +70,8 @@ DJOSER = {
 AUTH_USER_MODEL = 'core.User'
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -175,3 +176,12 @@ CORS_ALLOW_HEADERS = [
 import os
 # Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual key
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', 'YOUR_GOOGLE_MAPS_API_KEY_HERE')
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+import dj_database_url
+import os
+
+DATABASES = {
+    "default": dj_database_url.config(default=os.getenv("postgresql://blablabike_user:apmJKeh3F6XHxq1E66pffhq8LubeasSQ@dpg-d5mgip94tr6s73cl1jcg-a/blablabike"))
+}
+
